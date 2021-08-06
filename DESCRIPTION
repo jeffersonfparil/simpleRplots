@@ -1,0 +1,15 @@
+Package: simpleRplots
+Title: Simple Plots in R
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Jeff",
+           family = "Paril",
+           role = c("aut", "cre"),
+           email = "jeffersonparil@gmail.com",
+           comment = c(ORCID = "0000-0002-5693-4123"))
+Description: Generate simple R plots using functions in base R.
+License: `use_gpl3_license()`
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
