@@ -1,5 +1,6 @@
 ### Accompanying function for lostic regression plot:
 ### calculate the area under the receiver operating curve, i.e. FPR vs TPR curve
+#' @export
 simple_auc = function(y_binary, y_continuous, seed=123){
   ### to prevent insufficient memory leading to R being killed, limit the size to a maximum of 30,000
   if (length(y_binary)>30000){
@@ -29,6 +30,7 @@ simple_auc = function(y_binary, y_continuous, seed=123){
   return(auc)
 }
 ### plot the logistic regression curve with the distribution of the binary response variable along the continuous explanatiry variable
+#' @export
 simple_logit_plot = function(x, y, level=0.95, col_fit="black", lwd_fit=1, col_ci_ribbon="#fc9272", lwd_ci_ribbon=1, col_hist_top="#af8dc3", col_hist_bottom="#7fbf7b", col_hist_bord=NA, main=NULL, xlab=NULL, ylab=NULL, xlim=NULL, ylim=NULL, zlim=NULL, x_ticks_len=6, y_ticks_len=6, z_ticks_len=6, x_digits=2, y_digits=2, z_digits=2, show_auc=TRUE, show_legend=FALSE){
   ### test ##########################
   # v_mu = apply(cbind(dat$v_x_Drive_mu, dat$v_y_Drive_mu), MAR=1, FUN=mean)

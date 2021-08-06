@@ -1,4 +1,5 @@
 ### A simple heatmap plotting function using base R
+#' @export
 simple_heatmap = function(mat, vec_mat_lim=NULL, vec_col_lim=c("white", "red"), resolution=101, main="", xlab="", ylab="", vec_las=c(1,1), vec_numeric_axes=c(FALSE,FALSE), vec_axes_decplac=c(2,2), show.text=FALSE){
   # ### test:
   # mat = mat_mu
