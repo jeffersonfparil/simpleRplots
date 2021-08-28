@@ -1,5 +1,14 @@
-### time series plotting function
+### TODO: convert into a gneric function, i.e. not specific to our dataset
+### time series plotting functions for spatially-explicit stochastic suppression gene drive simulation
 #' @export
+q_W_shredder = function(q, c=1){(8*q - 3*c*q - c*q^2) / (8 - 4*c)}
+q_X_shredder = function(q, c=1){(2*q) / (2 - c + c*q)}
+N = function(N, R_max, N_star, c, q, area=50*50){
+  n = N/area
+  P_female = (2 - c - c*q) / (4 - 2*c)
+  b = R_max / ( 1 + (n * ((R_max-2) / (2*N_star))) )
+  return(N * P_female * b)
+}
 simple_plot_timeseries_ribbon = function(R_max, DF_ALL, c=1, area=2500, vec_t=1:50, q_intro=0.01, vec_ribbon_colours=c(rgb(127/256,205/256,187/256,alpha=0.8), rgb(44/256,127/256,184/256,alpha=0.8)), vec_line_type=1:2, show.legend=TRUE){
   ### test #############
   ### fixed parameters
